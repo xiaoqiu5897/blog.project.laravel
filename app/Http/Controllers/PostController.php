@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Validator;
+use App\Http\Requests\PostRequest;
 
 class PostController extends Controller
 {
@@ -56,6 +58,42 @@ class PostController extends Controller
 		$tags = \App\Tag::get();
 
 		return view('tags.index',['tags' => $tags,'tag' => $tag,'posts_tag' => $posts_tag]);
+	}
+
+	public function getFormTest()
+	{
+		return view('test');
+	}
+
+	public function test(PostRequest $request)
+	{
+		return view('test', ['errors' => $request->ViewErrorBag]);
+		//$input = $request->all();
+		// $validator = Validator::make($input, 
+		// [
+		// 	'title' => 'required|unique:posts|max:255',
+  //           'description' => 'required',
+  //           'slug' => 'required',
+  //           'content' => 'required',
+		// ],
+		// [
+  //           'required' => ':attribute Không được để trống',
+  //           'min' => ':attribute Không được nhỏ hơn :min',
+  //           'max' => ':attribute Không được lớn hơn :max'
+  //       ],
+  //       [
+  //           'title' => 'Tiêu đề',
+  //           'description' => 'Mô tả',
+  //           'content' => 'Nội dung'
+  //    ]
+  // );
+
+		// if ($validator->fails()) {
+		// 	return redirect()->back()
+  //                       ->withErrors($validator)
+  //                       ->withInput();        
+		// }
+      
 	}
 
 }
