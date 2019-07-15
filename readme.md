@@ -9,7 +9,7 @@ DB_PORT=3306
 DB_DATABASE=database_name
 DB_USERNAME=username
 DB_PASSWORD=password
-
+```
 3. Run
 ``` bash
 $ composer update
