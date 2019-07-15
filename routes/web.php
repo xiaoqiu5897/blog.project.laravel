@@ -38,6 +38,14 @@ Route::prefix('admin')->group(function() {
 		Route::delete('posts/removetag/{tag_id}','AdminPostAjaxController@removePostTag')->name('removetag');
 		
 		Route::resource('posts','AdminPostAjaxController');
+
+		// Route::get('posts','AdminPostAjaxController@index');
+		// Route::get('posts/{id}','AdminPostAjaxController@show')->name('posts.show');
+		// Route::get('posts/create','AdminPostAjaxController@create')->name('posts.create');
+		// Route::get('posts/{id}/edit','AdminPostAjaxController@edit')->name('posts.edit');
+		// Route::post('posts/{id}','AdminPostAjaxController@store')->name('posts.store');
+		// Route::put('posts/{id}','AdminPostAjaxController@update')->name('posts.update');
+		// Route::delete('posts/{id}','AdminPostAjaxController@destroy')->name('posts.destroy');
 		//Hết quản lý POST
 		
 		//Quản lý CATEGORY

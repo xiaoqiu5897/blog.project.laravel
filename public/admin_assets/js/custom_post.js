@@ -102,12 +102,10 @@ $(document).ready(function () {
 	//Sự kiện submit form thêm mới
 	$('#form-add').on('submit', function (e) {
 		e.preventDefault();
-		var form = $(this)[0]; 
+		var form = $(this)[0];
 		var formData = new FormData(form);
-		var dataList = $(".multi-item").map(function() {
-			return $(this).data("id");
-		}).get();
-		formData.append('post_tag', dataList.join(','))
+		var dataList = $('.magicsearch').data('id');
+		formData.append('post_tag', dataList)
 		formData.append('content', CKEDITOR.instances.add_content.getData());
 		$.ajax({
 			cache: false,

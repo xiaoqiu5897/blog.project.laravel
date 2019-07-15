@@ -180,7 +180,7 @@ class AdminCategoryController extends Controller
         $category = Category::where('id', $id)->first();
         $cate = Category::where('parent_id', $category->id);
         foreach ($cate->get() as $value) {
-            $post = Post::whereBetween('category_id', array($category->id, $value->id))->delete();
+            $post = Post::whereBetween('category_id', [$category->id, $value->id])->delete();
         }
         $cate->delete();
         $category->delete();

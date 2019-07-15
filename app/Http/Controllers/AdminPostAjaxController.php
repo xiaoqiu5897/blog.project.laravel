@@ -83,6 +83,7 @@ class AdminPostAjaxController extends Controller
             $thumbnail = $request->thumbnail->getClientOriginalName();
             $path = $request->file('thumbnail')->storeAs('/images/posts', $date . '_' . $thumbnail);
         }
+
         $user_id = Auth::id();
         $post = Post::create([
             'title' => $request->title,
